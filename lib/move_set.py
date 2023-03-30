@@ -1,6 +1,6 @@
 import pygame
 import sqlite3
-from move import Move
+from lib.move import Move
 
 CONN = sqlite3.connect('Pokemon.db')
 CURSOR = CONN.cursor()
@@ -11,6 +11,7 @@ class MoveSet:
         self.move_2 =  Move.all[move_2_id]
         self.move_3 =  Move.all[move_3_id]
         self.move_4 =  Move.all[move_4_id]
+        MoveSet.all.append(self)
     
 # db methods
     @classmethod
@@ -21,6 +22,7 @@ class MoveSet:
     
     @classmethod
     def get_all(cls):
+        Move.get_all()
         sql = """
             SELECT *
             FROM MoveSet

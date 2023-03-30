@@ -1,9 +1,10 @@
 import pygame
 import config
-
+ 
 class Player:
-    def __init__(self, x_postition, y_position):
+    def __init__(self, x_postition, y_position, trainer):
         print("player created")
+        self.trainer = trainer
         self.position = [x_postition, y_position]
         self.image = pygame.image.load("lib/img/player.png")
         self.image = pygame.transform.scale(self.image, (config.SCALE, config.SCALE))

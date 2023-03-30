@@ -20,6 +20,8 @@ class MonsterFactory:
         hp = all_dex[random_number].maxhp
         
         pokemon = Pokemon(name,random_number,hp,3,1)
+        pokemon.save()
+        
         return pokemon
 
     def create_monster(self, monster_type):

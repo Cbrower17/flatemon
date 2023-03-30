@@ -12,7 +12,7 @@ from game_view.map import Map
 from game_view.battle import Battle
 
 class Game:
-    def __init__(self, screen):
+    def __init__(self, screen,trainer):
         self.screen = screen
         self.objects = []
         self.game_state = GameState.NONE
@@ -20,10 +20,11 @@ class Game:
         self.player_has_moved = False
         self.monster_factory = MonsterFactory()
         self.map = Map(screen)
+        self.trainer = trainer
         self.battle = None
 
     def set_up(self):
-        player = Player(1, 1)
+        player = Player(1, 1,self.trainer)
         self.player = player
         self.objects.append(player)
         print("do set up")
@@ -46,6 +47,7 @@ class Game:
             self.battle.render()
 
             if self.battle.pokemon.remaining_hp <= 0:
+                self.battle.pokemon.delete_from_table()
                 self.current_game_state = CurrentGameState.MAP
 
         # self.player_has_moved = False
@@ -63,7 +65,7 @@ class Game:
 
         if map_tile == config.MAP_TILE_LONG_GRASS:
             self.determine_pokemon_found(map_tile)
-            print("in the tall grass")
+            # print("in the tall grass")
         else:
             return
 
