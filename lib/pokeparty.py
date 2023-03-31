@@ -29,7 +29,7 @@ class PokeParty:
     def set_pokemon(self, pokemon):
         from lib.pokemon import Pokemon
         if isinstance(pokemon, int):
-            self._pokemon = Pokemon.all[pokemon]
+            self._pokemon = Pokemon.all[pokemon-1]
         elif isinstance(pokemon,Pokemon):
             self._pokemon = pokemon
         else:

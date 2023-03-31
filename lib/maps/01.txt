@@ -1,9 +1,9 @@
 G G G L W G G G G G G G G G L L L G G G
 G R R L W G G G G G G G G G L L L G G G
 G R R L W G G G G G G G G G G G G G G G
-G R R G G G G G G G G G G G G G G G G G
-G R R R R R R R R R R R G G G G G G G G
-G G R R G G G G G G G G G G G G G G G G
+G R R G G G G G G G G G G G G G G W W W
+G R R R R R R R R R R R R R R R R W W W
+G G R R G G G G G G G G G G G G G W W W
 G G R R G G G G G G G G G G G G G G G G
 G G R R G G G G G G G G G G G G G G G G
 G G R R G G G G G G G G G G G G G G G G

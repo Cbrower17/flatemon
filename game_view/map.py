@@ -6,7 +6,7 @@ import utilities
 import mixer
 
 pygame.mixer.init()
-pygame.mixer.music.load("lib/audio/[INSTRUMENTAL] Justin Timberlake - SexyBack.mp3")
+pygame.mixer.music.load("lib/audio/theelevatorbossanova.mp3")
 
 class Map:
     def __init__(self, screen):
@@ -23,7 +23,7 @@ class Map:
                     tiles.append(line[i])
                 self.map_array.append(tiles)
             print(self.map_array)
-            # pygame.mixer.music.play(-1)
+            pygame.mixer.music.play(-1)
 
     def render(self, screen, player, objects):
         self.determine_camera(player)

@@ -51,6 +51,8 @@ class Pokemon:
         CURSOR.execute(sql, (self.nickname, self.pokedex_id.id, self.remaining_hp, self.trainer_id ,self.move_set_id.id))
 
         CONN.commit()
+
+        
     def change_name(self,new_name):
         sql = '''
         UPDATE Pokemon
