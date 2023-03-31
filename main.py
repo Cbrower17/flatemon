@@ -1,6 +1,7 @@
 import pygame
 import config
 from game_state import GameState
+import mixer
 
 from game import Game
 

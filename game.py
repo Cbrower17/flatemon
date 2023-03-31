@@ -1,5 +1,5 @@
 import random
-
+import mixer
 import pygame
 import config
 import math

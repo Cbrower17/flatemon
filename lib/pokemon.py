@@ -16,10 +16,12 @@ class Pokemon:
         else:
             self.id =1
         self.nickname = nickname
-        self.pokedex_id = Pokedex.all[p_id]
+        self.pokedex_id = Pokedex.all[p_id-1]
         self.remaining_hp = remaining_hp
         self.trainer_id = trainer_id
-        # print("movesetId in pokemon init:",move_set_id)
+        print("pokemone init: ",p_id)
+        print("poke init |", Pokedex.all[2].id)
+        print("poke init |", Pokedex.all[3].id)
         # oswalk
         self.move_set_id = MoveSet.all[move_set_id]
         self.image_front = pygame.image.load("lib/pokemon/front/" + f"{p_id}" + ".png")
@@ -72,6 +74,7 @@ class Pokemon:
         DELETE FROM Pokemon WHERE id =? ;'''
         CURSOR.execute(sql,(self.id,))
         CONN.commit()
+        del Pokemon.all[self.id-1]
 # db methods
     @classmethod
     def new_from_db(cls, row):

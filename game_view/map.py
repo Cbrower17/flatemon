@@ -3,6 +3,10 @@ import pygame
 import config
 import math
 import utilities
+import mixer
+
+pygame.mixer.init()
+pygame.mixer.music.load("lib/audio/[INSTRUMENTAL] Justin Timberlake - SexyBack.mp3")
 
 class Map:
     def __init__(self, screen):
@@ -11,6 +15,7 @@ class Map:
         self.camera = [0,0]
     
     def load(self, file_name):
+        
         with open('lib/maps/' + file_name + ".txt") as map_file:
             for line in map_file:
                 tiles = []
@@ -18,6 +23,7 @@ class Map:
                     tiles.append(line[i])
                 self.map_array.append(tiles)
             print(self.map_array)
+            # pygame.mixer.music.play(-1)
 
     def render(self, screen, player, objects):
         self.determine_camera(player)

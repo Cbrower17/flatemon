@@ -16,8 +16,8 @@ class MonsterFactory:
 
         random_number = utilities.generate_random_number(1, 9)
         all_dex = Pokedex.get_all()
-        name = all_dex[random_number].name
-        hp = all_dex[random_number].maxhp
+        name = all_dex[random_number-1].name
+        hp = all_dex[random_number-1].maxhp
         
         pokemon = Pokemon(name,random_number,hp,3,1)
         pokemon.save()

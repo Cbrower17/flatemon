@@ -49,11 +49,11 @@ class Pokedex:
         """
 
         all = CURSOR.execute(sql).fetchall()
-        print(all)
+        # print(all)
         # cls.all = [cls.new_from_db(row) for row in all]
         for row in all:
             # print("row inside loop:",row)
-            cls.all.append(cls.new_from_db(row))
+            cls.new_from_db(row)
         return cls.all
     
 if __name__ == "__main__":
